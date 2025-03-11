@@ -4,51 +4,35 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+
+
         Scanner scanner = new Scanner(System.in);
 
+
         while (true) {
-            System.out.println("Kailua car rental");
-            System.out.println("1. Insert customer");
-            System.out.println("2. Delete customer");
-            System.out.println("3. Update");
-            System.out.println("4. Exit program");
-            System.out.println("Vælg  en mulighed:");
+            System.out.println("Kailua Car Rental");
+            System.out.println("1. Add Car");
+            System.out.println("2. Delete Car");
+            System.out.println("3. Update Car");
+            System.out.println("4. List All Cars");
+            System.out.println("5. Add Customer");
+            System.out.println("6. Create Rental Contract");
+            System.out.println("7. Exit");
+            System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch(choice) {
-                case 1: {
-                    System.out.println("Insert the customers id:");
-                    String customersId = scanner.nextLine();
-                    System.out.println("Insert the customers name:");
-                    String name = scanner.nextLine();
-                    System.out.println("Insert the customers address:");
-                    String address = scanner.nextLine();
-                    System.out.println("Insert the customers zipcode:");
-                    String zipCode = scanner.nextLine();
-                    System.out.println("Insert the customers city:");
-                    String city = scanner.nextLine();
-                    System.out.println("Insert the customers phonenumber:");
-                    int phoneNr = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println("Insert the customers email:");
-                    String email = scanner.nextLine();
-                    System.out.println("Insert the customers driver licence number:");
-                    int driverLicenceNr = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println("Insert the customers date of when he got the driver licence:");
-                    LocalDate driverSince = LocalDate.parse(scanner.next());
-                    break;
-                }
-                    case 2: {
-
-
-
-
-
-                    }
+                case 1 -> Car.addCar();
+                case 2 -> Car.deleteCar();
+                case 3 -> Car.updateCar();
+                case 4 -> Car.listCars();
+                case 5 -> Customer.addCustomer();
+                case 6 -> Customer.createRental();
             }
-        }
+                default -> System.out.println("Invalid choice, try again.");
+            }
     }
 }
+
